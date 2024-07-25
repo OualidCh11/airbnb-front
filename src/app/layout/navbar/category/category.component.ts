@@ -25,4 +25,6 @@ export class CategoryComponent implements OnInit {
   private fetchCategories(): void {
     this.categories = this.categoryService.getCategories();
   } 
+
+  
 }
