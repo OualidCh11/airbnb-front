@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { CategoryService } from '../../../service/category.service';
-import { Category } from '../../../layout/category/category.model';
+import { CategoryService } from '../../../service/categoryServece/category.service';
+import { Category } from './category.model';
 
 @Component({
   selector: 'app-category',
@@ -16,6 +16,7 @@ export class CategoryComponent implements OnInit {
 
   categoryService: CategoryService = inject(CategoryService);
   categories: Category[] | undefined;
+  // isHome = false;
   currentActiveCategory = this.categoryService.getCategoryByDefault();
 
   ngOnInit(): void {

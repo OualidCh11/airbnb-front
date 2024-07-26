@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Category, CategoryName } from '../layout/category/category.model';
+import { Category, CategoryName } from '../../layout/navbar/category/category.model';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({

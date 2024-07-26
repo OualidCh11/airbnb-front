@@ -12,3 +12,17 @@
     }
 
 </div>
+
+<!-- @if (isHome) {
+    @for (category of categories; track category.technicalname) {
+        @if (category.technicalname !== 'ALL' ) {
+            <div class="flex flex-column alaign-items-center pb-3 category"
+                [class.category-activated]="category.activated">
+                <fa-icon class="mb-1" [icon]="category.icon"></fa-icon>
+                
+                <div title="{{category.displayname}}" class="name">{{ category.displayname }}</div>
+
+            </div>
+        }
+    }
+} -->

@@ -12,7 +12,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 export class AvatarComponent {
 
   imageUrl=input<string>();
-  avatarSize = input< "avatr-sm" | "avatr-xl" >();
+  avatarSize = input< "avatar-sm" | "avatar-xl" >();
 
 }
 
