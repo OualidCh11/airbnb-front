@@ -2,12 +2,13 @@ import { Component, inject, OnInit } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CategoryService } from '../../../service/categoryServece/category.service';
 import { Category } from './category.model';
+import {ToastModule} from "primeng/toast";
 
 @Component({
   selector: 'app-category',
   standalone: true,
   imports: [
-    FontAwesomeModule
+    FontAwesomeModule , ToastModule 
   ],
   templateUrl: './category.component.html',
   styleUrl: './category.component.scss'

@@ -4,21 +4,45 @@ import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontaweso
 import { fontAwesomeIcons } from './shared/font-awesome';
 import { NavbarComponent } from "./layout/navbar/navbar.component";
 import { FooterComponent } from "./layout/footer/footer.component";
+import { ToastModule } from 'primeng/toast';
+import { ToastService } from './service/toastService/toast.service';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FontAwesomeModule, NavbarComponent, FooterComponent],
+  imports: [RouterOutlet, FontAwesomeModule, NavbarComponent, FooterComponent , ToastModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+  providers: [ToastService, MessageService]
 })
 export class AppComponent implements OnInit{
   faIconLibrary: FaIconLibrary = inject(FaIconLibrary);
+  isListingview = true;
+  toastService = inject(ToastService);
+  messageService = inject(MessageService);
+
+
   ngOnInit(): void {
     this.initFontAwesome();
+    this.listenToastService();
   }
 
   private initFontAwesome(): void {
     this.faIconLibrary.addIcons(...fontAwesomeIcons);
   }
+
+  private listenToastService(): void {
+    
+    this.toastService.sendSub.subscribe(
+      {
+        next: newMessage => {
+          if(newMessage && newMessage.summary !== this.toastService.INIT_STATE){
+            this.messageService.add(newMessage);
+          }
+        }
+      }
+    ) 
+    
+  } 
 }
