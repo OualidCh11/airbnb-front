@@ -1,7 +1,7 @@
 import {HttpErrorResponse, HttpHandlerFn, HttpInterceptorFn, HttpRequest} from "@angular/common/http";
 import {inject} from "@angular/core";
 import {tap} from "rxjs";
-import {AuthService} from "../../service/auth/auth.service";
+import {AuthService} from "./auth.service";
 
 export const authExpired: HttpInterceptorFn = (
     req: HttpRequest<unknown>,

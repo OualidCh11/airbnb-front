@@ -4,7 +4,7 @@ import {Location} from "@angular/common";
 import {Observable} from "rxjs";
 import { User } from '../../core/model/user.model';
 import { State } from '../../core/model/state.model';
-import { environment } from '../../../environment/environment';
+import { environment } from '../../../environments/environment';
 
 
 
